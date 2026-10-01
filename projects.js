@@ -8,7 +8,6 @@ const PROJECTS = [
     kind: "Decision-model prototype",
     status: "Prototype",
     featured: true,
-    spotlight: true,
     description: "A 25-profile experiment testing whether Jev can reason over structured symptom data without a local matching engine, local scoring, or a fallback layer.",
     focus: "Product experiment · AI evaluation · Structured decisions",
     tags: ["Jev", "Decision Models", "Structured Data", "AI Evaluation"],
@@ -82,7 +81,7 @@ const PROJECTS = [
 
   function makeCard(project, index) {
     const card = document.createElement("article");
-    card.className = "project-card reveal" + (project.spotlight ? " project-card-spotlight" : "");
+    card.className = "project-card reveal";
 
     const top = document.createElement("div");
     top.className = "project-card-top";
