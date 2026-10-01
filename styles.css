@@ -435,3 +435,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
   .case-stack{grid-template-columns:1fr;}
   .case-toc{grid-template-columns:1fr;}
 }
+
+.project-detail-page .navlinks a.projects-active{color:var(--ink);}
+.project-detail-page .navlinks a.projects-active::after{width:100%;}
+.case-actions .project-link-disabled{pointer-events:none;cursor:not-allowed;opacity:.5;box-shadow:none;}
+.case-actions .project-link-disabled:hover{transform:none;box-shadow:none;}
