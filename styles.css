@@ -538,3 +538,40 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
   .project-card-top{margin-bottom:34px;}
   .project-card h3{font-size:36px;}
 }
+
+
+/* ---- spotlight project ---- */
+.project-card-spotlight{
+  grid-column:1/-1;
+  min-height:360px;
+  padding:34px;
+  background:var(--paper-2);
+}
+.project-card-spotlight .project-card-top{
+  margin-bottom:34px;
+}
+.project-card-spotlight h3{
+  font-size:clamp(42px,5.4vw,72px);
+  max-width:12ch;
+}
+.project-card-spotlight .project-focus{
+  font-size:20px;
+  max-width:34ch;
+}
+.project-card-spotlight .project-desc{
+  font-size:16px;
+  max-width:70ch;
+}
+.project-card-spotlight .project-tags{
+  margin-top:22px;
+}
+@media(max-width:760px){
+  .project-card-spotlight{
+    grid-column:auto;
+    min-height:0;
+    padding:24px;
+  }
+  .project-card-spotlight h3{
+    font-size:40px;
+  }
+}
