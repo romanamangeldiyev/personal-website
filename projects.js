@@ -11,6 +11,8 @@ const PROJECTS = [
     description: "A Turkmenistan-focused legal assistant that identifies a citizen’s issue, asks for missing facts, and prepares formal documents for institutions or court workflows.",
     tags: ["FastAPI", "Next.js", "LangGraph", "PostgreSQL", "Qdrant"],
     githubUrl: "https://github.com/romanamangeldiyev/Lexa",
+    githubDisabled: false,
+    technicalUrl: "project-lexa.html",
     liveUrl: ""
   },
   {
@@ -21,26 +23,20 @@ const PROJECTS = [
     description: "An agora for rethinking education — a discussion product for students, professors, teachers, parents, researchers, psychiatrists, and philosophers.",
     tags: ["React", "JavaScript", "Product Design", "Education"],
     githubUrl: "https://github.com/romanamangeldiyev/platomind",
-    liveUrl: ""
-  },
-  {
-    name: "NatPat Support Agents",
-    kind: "Multi-agent AI system",
-    status: "Hackathon",
-    featured: true,
-    description: "A policy-driven multi-agent customer-support system with triage, tool execution, response generation, escalation, session memory, and end-to-end tracing.",
-    tags: ["Python", "FastAPI", "Gemini", "Agents", "Docker"],
-    githubUrl: "https://github.com/romanamangeldiyev/Lookfor_Hackathon_2026_KIEV",
+    githubDisabled: true,
+    technicalUrl: "project-platomind.html",
     liveUrl: ""
   },
   {
     name: "Allincome",
     kind: "AI fintech",
     status: "Closed",
-    featured: false,
+    featured: true,
     description: "A fintech product built to unify freelancer and creator income streams, analyze them with AI, and turn fragmented financial data into actionable recommendations.",
     tags: ["Next.js", "TypeScript", "AI", "Fintech", "Full-stack"],
     githubUrl: "https://github.com/romanamangeldiyev/allincome",
+    githubDisabled: false,
+    technicalUrl: "project-allincome.html",
     liveUrl: ""
   }
 ];
@@ -48,15 +44,7 @@ const PROJECTS = [
 (function () {
   "use strict";
 
-  function makeLink(label, href, external) {
-    const link = document.createElement("a");
-    link.href = href;
-    link.textContent = label;
-    if (external) {
-      link.target = "_blank";
-      link.rel = "noopener";
-    }
-
+  function makeIcon(external) {
     const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     icon.setAttribute("viewBox", "0 0 24 24");
     icon.setAttribute("fill", "none");
@@ -65,7 +53,26 @@ const PROJECTS = [
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", external ? "M7 17 17 7M8 7h9v9" : "M5 12h14M13 6l6 6-6 6");
     icon.appendChild(path);
-    link.appendChild(icon);
+    return icon;
+  }
+
+  function makeLink(label, href, external) {
+    const link = document.createElement("a");
+    link.href = href;
+    link.append(document.createTextNode(label), makeIcon(external));
+    if (external) {
+      link.target = "_blank";
+      link.rel = "noopener";
+    }
+    return link;
+  }
+
+  function makeDisabledLink(label) {
+    const link = document.createElement("span");
+    link.className = "project-link-disabled";
+    link.setAttribute("aria-disabled", "true");
+    link.title = "Repository link is currently disabled";
+    link.append(document.createTextNode(label), makeIcon(true));
     return link;
   }
 
@@ -107,8 +114,20 @@ const PROJECTS = [
 
     const links = document.createElement("div");
     links.className = "project-links";
-    if (project.liveUrl) links.appendChild(makeLink("Open app", project.liveUrl, true));
-    if (project.githubUrl) links.appendChild(makeLink("GitHub", project.githubUrl, true));
+
+    if (project.technicalUrl) {
+      links.appendChild(makeLink("Technical notes", project.technicalUrl, false));
+    }
+    if (project.liveUrl) {
+      links.appendChild(makeLink("Open app", project.liveUrl, true));
+    }
+    if (project.githubUrl) {
+      links.appendChild(
+        project.githubDisabled
+          ? makeDisabledLink("GitHub")
+          : makeLink("GitHub", project.githubUrl, true)
+      );
+    }
 
     card.append(top, title, kind, desc, tags, links);
     return card;
