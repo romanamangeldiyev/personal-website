@@ -440,3 +440,103 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .project-detail-page .navlinks a.projects-active::after{width:100%;}
 .case-actions .project-link-disabled{pointer-events:none;cursor:not-allowed;opacity:.5;box-shadow:none;}
 .case-actions .project-link-disabled:hover{transform:none;box-shadow:none;}
+
+
+/* ---- refined project showcase: product + engineering ---- */
+.project-grid,
+.project-grid-home{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  background:transparent;
+  border:none;
+}
+.project-card{
+  min-height:390px;
+  padding:30px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  overflow:hidden;
+  transition:background .22s ease,transform .22s ease,border-color .22s ease;
+}
+.project-card:hover{
+  background:var(--card);
+  transform:translateY(-3px);
+  border-color:var(--line-strong);
+}
+.project-card-top{
+  margin-bottom:48px;
+}
+.project-index{
+  font-size:10.5px;
+  letter-spacing:.16em;
+}
+.project-status{
+  background:var(--paper-2);
+  border-color:var(--line);
+  padding:5px 9px;
+}
+.project-card h3{
+  font-size:clamp(34px,3.5vw,48px);
+  line-height:.96;
+  margin-bottom:12px;
+}
+.project-card .project-kind{
+  margin-bottom:10px;
+}
+.project-focus{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-style:italic;
+  line-height:1.35;
+  color:var(--ink-soft);
+  margin-bottom:22px;
+}
+.project-card .project-desc{
+  font-size:15px;
+  line-height:1.65;
+  max-width:50ch;
+  margin-bottom:28px;
+}
+.project-tags{
+  padding-top:0;
+  margin-top:auto;
+}
+.project-links{
+  gap:18px;
+  padding-top:22px;
+  margin-top:24px;
+  border-top:1px solid var(--line);
+}
+.project-links a,
+.project-links .project-link-disabled{
+  border-bottom:none;
+  padding-bottom:0;
+}
+.project-links a{
+  color:var(--ink-soft);
+  transition:color .2s ease,transform .2s ease;
+}
+.project-links a:hover{
+  color:var(--ink);
+  transform:translateX(2px);
+}
+.project-showcase-head{
+  margin-bottom:30px;
+}
+.project-showcase-head p{
+  max-width:60ch;
+}
+.project-showcase-title{
+  max-width:18ch;
+}
+
+@media(max-width:980px){
+  .project-grid-home{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .project-grid-home .project-card:last-child{grid-column:auto;}
+}
+@media(max-width:760px){
+  .project-grid,.project-grid-home{grid-template-columns:1fr;}
+  .project-card{min-height:0;padding:24px;}
+  .project-card-top{margin-bottom:34px;}
+  .project-card h3{font-size:36px;}
+}
