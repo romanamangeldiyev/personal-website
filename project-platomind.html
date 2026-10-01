@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PlatoMind — Technical Notes | Roman Amangeldiyev</title>
+<meta name="description" content="An agora for rethinking education — a product experiment designed around structured discussion between students, professors, teachers, parents, researchers, psychiatrists, and philosophers." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="canonical" href="https://romanamangeldiyev.com/project-platomind.html" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Roman Amangeldiyev" />
+<meta name="theme-color" content="#100F0C" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://romanamangeldiyev.com/project-platomind.html" />
+<meta property="og:site_name" content="Roman Amangeldiyev" />
+<meta property="og:title" content="PlatoMind — Technical Notes" />
+<meta property="og:description" content="An agora for rethinking education — a product experiment designed around structured discussion between students, professors, teachers, parents, researchers, psychiatrists, and philosophers." />
+<meta property="og:image" content="https://romanamangeldiyev.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="project-detail-page">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#stack">Stack</a>
+      <a class="projects-active" href="projects.html">Projects</a>
+      <a href="index.html#writing">Blog</a>
+      <a href="index.html#credentials">Education</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="case-back" href="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All projects
+      </a>
+      <div class="case-eyebrow reveal">Education platform prototype · Prototype</div>
+      <h1 class="case-title reveal">PlatoMind</h1>
+      <p class="case-dek reveal">An agora for rethinking education — a product experiment designed around structured discussion between students, professors, teachers, parents, researchers, psychiatrists, and philosophers.</p>
+      <div class="case-meta reveal"><span>React</span><span>JavaScript</span><span>CSS</span><span>Product Design</span><span>GitHub Pages</span></div>
+      <div class="case-actions reveal">
+        <span class="btn ghost project-link-disabled" aria-disabled="true" title="Repository link is currently disabled">GitHub disabled</span>
+        <a class="btn ghost" href="projects.html"><span>Project archive</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-content">
+    <div class="wrap case-layout">
+      <aside class="case-toc reveal" aria-label="Article contents">
+        <div class="label">On this page</div>
+        <a href="#why">01 — Why I built it</a>
+        <a href="#product">02 — Product idea</a>
+        <a href="#architecture">03 — Architecture</a>
+        <a href="#build">04 — Build process</a>
+        <a href="#release">05 — Publishing</a>
+        <a href="#lessons">06 — What I learned</a>
+      </aside>
+      <article class="case-article">
+        
+        <section class="case-section reveal" id="why">
+          <div class="case-section-num">01 — Why I built it</div>
+          <h2>Why I built it</h2>
+          <p>Most conversations about education are fragmented by role. Students talk about the experience of learning, teachers about the classroom, researchers about evidence, parents about outcomes, and institutions about constraints. PlatoMind was an experiment in putting those perspectives into the same product.</p>
+      <div class="case-callout"><p>I wanted the discussion itself to become a product surface — not a comment section added after the product was designed.</p></div>
+        </section>
+
+        <section class="case-section reveal" id="product">
+          <div class="case-section-num">02 — Product idea</div>
+          <h2>An agora instead of a feed</h2>
+          <p>The interface is organized around topic-driven spaces where different roles can challenge assumptions, propose changes, and respond to one another. The prototype focuses on the interaction model rather than production infrastructure.</p>
+      <ul>
+        <li>Role-aware discussion between different participants in education.</li>
+        <li>Topic and agora structures instead of one generic social feed.</li>
+        <li>An Ask composer designed to route questions into relevant discussion spaces.</li>
+        <li>Mock content that makes the product behavior testable before a backend exists.</li>
+      </ul>
+        </section>
+
+        <section class="case-section reveal" id="architecture">
+          <div class="case-section-num">03 — Architecture</div>
+          <h2>A deliberately lightweight prototype</h2>
+          <p>PlatoMind is intentionally small: a static HTML shell loads React and Babel in the browser, one JavaScript file contains the application and mock data, and one CSS file contains the visual system.</p>
+      <div class="case-stack">
+        <div class="case-stack-item"><div class="k">UI</div><div class="v">React</div></div>
+        <div class="case-stack-item"><div class="k">Runtime</div><div class="v">Babel in browser</div></div>
+        <div class="case-stack-item"><div class="k">Styling</div><div class="v">Custom CSS</div></div>
+        <div class="case-stack-item"><div class="k">Data</div><div class="v">Local mock data</div></div>
+      </div>
+      <p>There is no backend in this prototype. That was a feature, not an omission: I wanted to validate the information architecture and interaction model before paying the complexity cost of authentication, persistence, moderation, and APIs.</p>
+        </section>
+
+        <section class="case-section reveal" id="build">
+          <div class="case-section-num">04 — Build process</div>
+          <h2>How the prototype was built</h2>
+          <p>I started with the product model — who participates, what kinds of conversations exist, and how a user moves from a question to a relevant agora. From there I built screens and states directly against mock content.</p>
+      <div class="case-flow"><code>problem framing
+→ role model
+→ agora / topic structure
+→ interaction prototype
+→ mock content
+→ browser testing
+→ publish static build</code></div>
+      <p>The AI-assisted routing inside the Ask composer was designed to degrade gracefully. When the assistant capability is unavailable, the user can still choose an agora manually instead of hitting a dead end.</p>
+        </section>
+
+        <section class="case-section reveal" id="release">
+          <div class="case-section-num">05 — Publishing</div>
+          <h2>How it can be published</h2>
+          <p>Because the prototype has no build step and no server dependency, deployment is intentionally simple. The HTML, CSS, and JavaScript files can be served directly from GitHub Pages or any static host.</p>
+      <ul>
+        <li>Keep the three application files at the repository root.</li>
+        <li>Enable GitHub Pages from the deployment branch.</li>
+        <li>Serve the project as static assets; React, Babel, and fonts load from CDNs.</li>
+        <li>Test fallback behavior because external assistant capabilities are not required for the core prototype.</li>
+      </ul>
+        </section>
+
+        <section class="case-section reveal" id="lessons">
+          <div class="case-section-num">06 — What I learned</div>
+          <h2>What I learned from keeping it simple</h2>
+          <p>The fastest way to learn whether an interface model works is often to remove infrastructure from the first version. PlatoMind made it possible to focus on information architecture, social-product mechanics, and the clarity of the core idea.</p>
+      <p>If the concept moves beyond prototype stage, the next engineering layer would be authentication, persistent discussions, moderation, search, and a backend for role- and topic-aware data.</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="l">© <span id="yr"></span> Roman Amangeldiyev — İstanbul</div>
+    <div class="r">
+      <a href="projects.html">Projects</a>
+      <a href="https://github.com/romanamangeldiyev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/romangeldiyev" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script src="script.js" defer></script>
+</body>
+</html>

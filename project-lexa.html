@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lexa — Technical Notes | Roman Amangeldiyev</title>
+<meta name="description" content="A legal assistant for Turkmenistan designed to turn a citizen’s own words into a structured legal workflow: identify the issue, collect missing facts, retrieve relevant material, and prepare a formal document." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="canonical" href="https://romanamangeldiyev.com/project-lexa.html" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Roman Amangeldiyev" />
+<meta name="theme-color" content="#100F0C" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://romanamangeldiyev.com/project-lexa.html" />
+<meta property="og:site_name" content="Roman Amangeldiyev" />
+<meta property="og:title" content="Lexa — Technical Notes" />
+<meta property="og:description" content="A legal assistant for Turkmenistan designed to turn a citizen’s own words into a structured legal workflow: identify the issue, collect missing facts, retrieve relevant material, and prepare a formal document." />
+<meta property="og:image" content="https://romanamangeldiyev.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="project-detail-page">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#stack">Stack</a>
+      <a class="projects-active" href="projects.html">Projects</a>
+      <a href="index.html#writing">Blog</a>
+      <a href="index.html#credentials">Education</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="case-back" href="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All projects
+      </a>
+      <div class="case-eyebrow reveal">Legal AI platform · Building</div>
+      <h1 class="case-title reveal">Lexa</h1>
+      <p class="case-dek reveal">A legal assistant for Turkmenistan designed to turn a citizen’s own words into a structured legal workflow: identify the issue, collect missing facts, retrieve relevant material, and prepare a formal document.</p>
+      <div class="case-meta reveal"><span>FastAPI</span><span>Next.js</span><span>LangGraph</span><span>PostgreSQL</span><span>Qdrant</span><span>Redis</span></div>
+      <div class="case-actions reveal">
+        <a class="btn ghost" href="https://github.com/romanamangeldiyev/Lexa" target="_blank" rel="noopener"><span>View GitHub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn ghost" href="projects.html"><span>Project archive</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-content">
+    <div class="wrap case-layout">
+      <aside class="case-toc reveal" aria-label="Article contents">
+        <div class="label">On this page</div>
+        <a href="#why">01 — Why I built it</a>
+        <a href="#product">02 — What it does</a>
+        <a href="#architecture">03 — Architecture</a>
+        <a href="#build">04 — Build process</a>
+        <a href="#release">05 — Release process</a>
+        <a href="#next">06 — What I’m learning</a>
+      </aside>
+      <article class="case-article">
+        
+        <section class="case-section reveal" id="why">
+          <div class="case-section-num">01 — Why I built it</div>
+          <h2>Why I built it</h2>
+          <p>Legal systems are difficult to navigate when the user does not know the correct legal terminology, which institution is responsible, or what a formal application should look like. Lexa starts from the opposite direction: the person explains the problem in ordinary language and the system translates that into a structured legal process.</p>
+      <div class="case-callout"><p>The product question was simple: can legal software begin with the user’s problem instead of forcing the user to understand the legal system first?</p></div>
+      <p>I designed Lexa around three roles — citizen, lawyer, and ministry — so the same underlying case can be understood differently depending on who is working with it.</p>
+        </section>
+
+        <section class="case-section reveal" id="product">
+          <div class="case-section-num">02 — What it does</div>
+          <h2>From a problem statement to a legal workflow</h2>
+          <p>The citizen describes what happened. The system classifies the issue, asks follow-up questions when important facts are missing, searches the relevant legal knowledge, and builds a structured draft that can be reviewed before it is used.</p>
+      <ul>
+        <li>Natural-language intake instead of form-first interaction.</li>
+        <li>Issue classification and missing-information collection.</li>
+        <li>Semantic retrieval over legal material.</li>
+        <li>Structured generation of formal documents.</li>
+        <li>Separate product surfaces for citizens, lawyers, and ministry workflows.</li>
+      </ul>
+        </section>
+
+        <section class="case-section reveal" id="architecture">
+          <div class="case-section-num">03 — Architecture</div>
+          <h2>Architecture and technology choices</h2>
+          <p>The codebase is split into a web application, an API, shared contracts, infrastructure, and documentation. That separation lets the UI evolve independently while keeping the legal workflow and retrieval logic inside the backend.</p>
+      <div class="case-stack">
+        <div class="case-stack-item"><div class="k">Frontend</div><div class="v">Next.js · TypeScript · Tailwind</div></div>
+        <div class="case-stack-item"><div class="k">API</div><div class="v">FastAPI · SQLAlchemy · Alembic</div></div>
+        <div class="case-stack-item"><div class="k">AI orchestration</div><div class="v">LangGraph</div></div>
+        <div class="case-stack-item"><div class="k">Data</div><div class="v">PostgreSQL · Qdrant · Redis</div></div>
+        <div class="case-stack-item"><div class="k">Object storage</div><div class="v">MinIO</div></div>
+        <div class="case-stack-item"><div class="k">Embeddings</div><div class="v">Voyage 4 Large via OpenRouter</div></div>
+      </div>
+      <p>The local development environment is containerized for infrastructure services. The API uses migrations rather than ad-hoc schema changes, while Qdrant handles vector retrieval and Redis supports fast state-oriented workloads.</p>
+        </section>
+
+        <section class="case-section reveal" id="build">
+          <div class="case-section-num">04 — Build process</div>
+          <h2>How I’m building it</h2>
+          <p>I’m building Lexa in phases instead of trying to make the entire legal platform intelligent at once. The first phase established the repository structure, infrastructure, web/API boundaries, data layer, and development workflow.</p>
+      <div class="case-flow"><code>user problem
+→ intake + classification
+→ missing-fact questions
+→ retrieval
+→ legal reasoning workflow
+→ document draft
+→ human review / next action</code></div>
+      <p>The main engineering constraint is traceability. A legal product should make it possible to understand where information came from and which step transformed it. That pushes the architecture toward explicit graph states and retrieval rather than one giant prompt.</p>
+        </section>
+
+        <section class="case-section reveal" id="release">
+          <div class="case-section-num">05 — Release process</div>
+          <h2>Development and release workflow</h2>
+          <p>Locally, infrastructure runs through Docker Compose while the FastAPI and Next.js applications run independently for fast iteration. Database changes go through Alembic migrations, and backend checks include tests, Ruff, MyPy, and migration validation.</p>
+      <ul>
+        <li>Start Postgres, Qdrant, Redis, and MinIO through Docker Compose.</li>
+        <li>Run migrations before starting the API.</li>
+        <li>Run backend tests and static checks before a release.</li>
+        <li>Run lint, typecheck, and production build for the Next.js frontend.</li>
+        <li>Keep model integrations optional so the core application can still be tested without live LLM calls.</li>
+      </ul>
+        </section>
+
+        <section class="case-section reveal" id="next">
+          <div class="case-section-num">06 — What I’m learning</div>
+          <h2>What this project is teaching me</h2>
+          <p>Lexa is less about adding a chatbot to legal documents and more about designing a reliable product around uncertain language, retrieval quality, state, and formal output. The difficult part is not generating text; it is creating a system whose intermediate decisions are inspectable enough to improve.</p>
+      <p>The next work is focused on deeper legal retrieval, better workflow evaluation, and turning the prototype architecture into a product that can support real case flows safely.</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="l">© <span id="yr"></span> Roman Amangeldiyev — İstanbul</div>
+    <div class="r">
+      <a href="projects.html">Projects</a>
+      <a href="https://github.com/romanamangeldiyev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/romangeldiyev" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script src="script.js" defer></script>
+</body>
+</html>
