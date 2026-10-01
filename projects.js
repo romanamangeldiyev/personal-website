@@ -26,18 +26,6 @@ const PROJECTS = [
     githubDisabled: true,
     technicalUrl: "project-platomind.html",
     liveUrl: ""
-  },
-  {
-    name: "Allincome",
-    kind: "AI fintech",
-    status: "Closed",
-    featured: true,
-    description: "A fintech product built to unify freelancer and creator income streams, analyze them with AI, and turn fragmented financial data into actionable recommendations.",
-    tags: ["Next.js", "TypeScript", "AI", "Fintech", "Full-stack"],
-    githubUrl: "https://github.com/romanamangeldiyev/allincome",
-    githubDisabled: false,
-    technicalUrl: "project-allincome.html",
-    liveUrl: ""
   }
 ];
 
