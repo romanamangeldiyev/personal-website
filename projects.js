@@ -8,7 +8,8 @@ const PROJECTS = [
     kind: "Legal AI platform",
     status: "Building",
     featured: true,
-    description: "A Turkmenistan-focused legal assistant that identifies a citizen’s issue, asks for missing facts, and prepares formal documents for institutions or court workflows.",
+    description: "A Turkmenistan-focused legal product exploring how ordinary-language legal problems can become structured, reviewable workflows and formal documents.",
+    focus: "Product discovery · Legal AI · Workflow design",
     tags: ["FastAPI", "Next.js", "LangGraph", "PostgreSQL", "Qdrant"],
     githubUrl: "https://github.com/romanamangeldiyev/Lexa",
     githubDisabled: false,
@@ -20,7 +21,8 @@ const PROJECTS = [
     kind: "Education platform prototype",
     status: "Prototype",
     featured: true,
-    description: "An agora for rethinking education — a discussion product for students, professors, teachers, parents, researchers, psychiatrists, and philosophers.",
+    description: "A product experiment for structured debate around education, designed to bring students, educators, parents, researchers, and other stakeholders into the same conversation.",
+    focus: "Product design · Community systems · Education",
     tags: ["React", "JavaScript", "Product Design", "Education"],
     githubUrl: "https://github.com/romanamangeldiyev/platomind",
     githubDisabled: true,
@@ -88,6 +90,10 @@ const PROJECTS = [
     kind.className = "project-kind";
     kind.textContent = project.kind;
 
+    const focus = document.createElement("div");
+    focus.className = "project-focus";
+    focus.textContent = project.focus || "";
+
     const desc = document.createElement("p");
     desc.className = "project-desc";
     desc.textContent = project.description;
@@ -104,7 +110,7 @@ const PROJECTS = [
     links.className = "project-links";
 
     if (project.technicalUrl) {
-      links.appendChild(makeLink("Technical notes", project.technicalUrl, false));
+      links.appendChild(makeLink("Case study", project.technicalUrl, false));
     }
     if (project.liveUrl) {
       links.appendChild(makeLink("Open app", project.liveUrl, true));
@@ -117,7 +123,7 @@ const PROJECTS = [
       );
     }
 
-    card.append(top, title, kind, desc, tags, links);
+    card.append(top, title, kind, focus, desc, tags, links);
     return card;
   }
 
