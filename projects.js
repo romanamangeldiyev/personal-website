@@ -17,17 +17,17 @@ const PROJECTS = [
     liveUrl: "https://roman.s.gy/jev-ai"
   },
   {
-    name: "Lexa",
+    name: "hukukcy.com",
     kind: "Legal AI platform",
-    status: "Building",
+    status: "Production",
     featured: true,
-    description: "A Turkmenistan-focused legal product exploring how ordinary-language legal problems can become structured, reviewable workflows and formal documents.",
-    focus: "Product discovery · Legal AI · Workflow design",
-    tags: ["FastAPI", "Next.js", "LangGraph", "PostgreSQL", "Qdrant"],
+    description: "A Turkmenistan-focused legal platform that turns plain-language legal problems into grounded research and formal documents, with public law browsing and document verification.",
+    focus: "Product strategy · Agentic legal RAG · Production systems",
+    tags: ["FastAPI", "Next.js", "LangGraph", "PostgreSQL", "Qdrant", "AWS"],
     githubUrl: "https://github.com/romanamangeldiyev/Lexa",
     githubDisabled: false,
-    technicalUrl: "project-lexa.html",
-    liveUrl: ""
+    technicalUrl: "project-hukukcy.html",
+    liveUrl: "https://hukukcy.com"
   },
   {
     name: "PlatoMind",
