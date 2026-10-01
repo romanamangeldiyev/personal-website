@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jev AI Experiment — Product & Engineering Case Study | Roman Amangeldiyev</title>
+<meta name="description" content="A 25-profile product and engineering experiment testing whether Jev can reason over structured symptom data without a local matching engine, local scoring, or fallback logic." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="canonical" href="https://romanamangeldiyev.com/project-jev-ai.html" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Roman Amangeldiyev" />
+<meta name="theme-color" content="#100F0C" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://romanamangeldiyev.com/project-jev-ai.html" />
+<meta property="og:site_name" content="Roman Amangeldiyev" />
+<meta property="og:title" content="Jev AI Experiment — Product & Engineering Case Study" />
+<meta property="og:description" content="A 25-profile experiment testing Jev on structured symptom data with no local scoring engine and no fallback." />
+<meta property="og:image" content="https://romanamangeldiyev.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="project-detail-page">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#stack">Stack</a>
+      <a class="projects-active" href="projects.html">Projects</a>
+      <a href="index.html#writing">Blog</a>
+      <a href="index.html#credentials">Education</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="case-back" href="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All projects
+      </a>
+      <div class="case-eyebrow reveal">Decision-model prototype · Product experiment</div>
+      <h1 class="case-title reveal">Jev AI <em>Experiment</em></h1>
+      <p class="case-dek reveal">Jev launched, so I gave it a real constraint: reason over structured symptom data across 25 profiles without relying on a local matching engine, local scoring, or a fallback layer.</p>
+      <div class="case-meta reveal"><span>Product Experiment</span><span>AI Evaluation</span><span>Jev</span><span>Structured Data</span><span>Decision Models</span></div>
+      <div class="case-actions reveal">
+        <a class="btn ghost" href="https://roman.s.gy/jev-ai" target="_blank" rel="noopener"><span>Try prototype</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn ghost" href="https://typesafe.ai/" target="_blank" rel="noopener"><span>Jev by TypeSafe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn ghost" href="projects.html"><span>Project archive</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-content">
+    <div class="wrap case-layout">
+      <aside class="case-toc reveal" aria-label="Article contents">
+        <div class="label">On this page</div>
+        <a href="#why">01 — Why I built it</a>
+        <a href="#question">02 — Product question</a>
+        <a href="#experiment">03 — Experiment design</a>
+        <a href="#pm">04 — PM decisions</a>
+        <a href="#engineering">05 — Engineering model</a>
+        <a href="#validation">06 — Validation</a>
+        <a href="#shipping">07 — Shipping & next</a>
+      </aside>
+
+      <article class="case-article">
+        <section class="case-section reveal" id="why">
+          <div class="case-section-num">01 — Why I built it</div>
+          <h2>A new model is more interesting when it meets a real constraint.</h2>
+          <p>Jev launched with a different interface from a normal generative model: it is designed around structured decisions rather than free-form text. Instead of building another toy classifier, I wanted to test the product claim against a problem where the input is structured, the candidate outcomes are bounded, and a wrong architectural shortcut would be easy to hide.</p>
+          <div class="case-callout"><p>No local scoring. No fallback. Just Jev.</p></div>
+          <p>The point of the prototype is not to claim medical capability. It is an evaluation of whether a decision model can carry the reasoning burden in a constrained symptom-to-profile matching task without quietly outsourcing the hard part to application code.</p>
+        </section>
+
+        <section class="case-section reveal" id="question">
+          <div class="case-section-num">02 — Product question</div>
+          <h2>Can the model be the matcher, not just a feature inside the matcher?</h2>
+          <p>The core product question is architectural: if the application already contains a local scoring engine, weighted symptom rules, or a fallback matcher, then it becomes difficult to tell whether Jev is actually solving the problem or simply decorating an existing system.</p>
+          <p>I therefore framed the prototype around one falsifiable question: <strong>can Jev reason over the structured symptom state and distinguish between 25 predefined profiles without a local matching layer?</strong></p>
+          <h3>Why this matters from a PM perspective</h3>
+          <p>If the answer is yes, the product surface can stay much simpler: fewer hand-maintained heuristics, fewer duplicated rules, and a clearer separation between product logic and model capability. If the answer is no, that is equally useful evidence because it tells me where a deterministic or hybrid layer is actually necessary.</p>
+        </section>
+
+        <section class="case-section reveal" id="experiment">
+          <div class="case-section-num">03 — Experiment design</div>
+          <h2>Remove the safety nets so the test means something.</h2>
+          <p>The prototype contains 25 profiles and intentionally avoids three common shortcuts:</p>
+          <ul>
+            <li><strong>No local matching engine:</strong> application code does not independently decide the closest profile.</li>
+            <li><strong>No local scoring:</strong> there is no hidden symptom-weight formula deciding the result before the model sees it.</li>
+            <li><strong>No fallback:</strong> if Jev cannot make a useful decision, another model or rules engine does not silently rescue the flow.</li>
+          </ul>
+          <p>Those constraints make the experiment less forgiving but more informative. The prototype is designed to expose Jev’s behavior rather than smooth over it.</p>
+          <div class="case-flow"><code>structured symptom state
+→ Jev decision request
+→ bounded profile decision
+→ probability / confidence signal
+→ result shown to the user</code></div>
+        </section>
+
+        <section class="case-section reveal" id="pm">
+          <div class="case-section-num">04 — PM decisions</div>
+          <h2>The product is the experiment design.</h2>
+          <p>The most important decisions were not visual or infrastructural. They were about making the test interpretable.</p>
+          <ul>
+            <li><strong>Bound the problem:</strong> use 25 profiles rather than an open-ended diagnostic universe.</li>
+            <li><strong>Make one model accountable:</strong> avoid hybrid logic in the first version so failure modes remain visible.</li>
+            <li><strong>Prefer a falsifiable prototype:</strong> it should be possible to conclude that Jev is not sufficient for the task.</li>
+            <li><strong>Separate demo value from product truth:</strong> a compelling interface is not evidence that the model is correct.</li>
+            <li><strong>Keep the next architecture conditional:</strong> only add rules, thresholds, retrieval, or another model when the experiment shows why they are needed.</li>
+          </ul>
+          <h3>What I would not optimize yet</h3>
+          <p>I would not prioritize onboarding, retention loops, broad profile coverage, or production-scale medical UX before validating the central model hypothesis. Those would make the prototype look more complete without answering the highest-risk question.</p>
+        </section>
+
+        <section class="case-section reveal" id="engineering">
+          <div class="case-section-num">05 — Engineering model</div>
+          <h2>Use Jev as a decision primitive.</h2>
+          <p>TypeSafe describes Jev as a model for machine-facing decisions: the application sends state plus typed questions and receives typed answers with probabilities or confidence rather than generated prose. That interface is a strong fit for an experiment where the output must be one of a bounded set of profiles.</p>
+          <div class="case-stack">
+            <div class="case-stack-item"><div class="k">Input</div><div class="v">Structured symptom state</div></div>
+            <div class="case-stack-item"><div class="k">Decision layer</div><div class="v">Jev</div></div>
+            <div class="case-stack-item"><div class="k">Candidate space</div><div class="v">25 profiles</div></div>
+            <div class="case-stack-item"><div class="k">Local matcher</div><div class="v">None</div></div>
+            <div class="case-stack-item"><div class="k">Local score</div><div class="v">None</div></div>
+            <div class="case-stack-item"><div class="k">Fallback model</div><div class="v">None</div></div>
+          </div>
+          <p>This keeps the implementation conceptually clean: the application owns input structure, candidate definitions, and presentation; Jev owns the actual model decision being evaluated.</p>
+        </section>
+
+        <section class="case-section reveal" id="validation">
+          <div class="case-section-num">06 — Validation</div>
+          <h2>What would make the experiment convincing?</h2>
+          <p>A useful evaluation needs more than a few good demos. I would measure profile-selection accuracy on a labeled test set, confidence calibration, confusion between similar profiles, sensitivity to missing or contradictory symptom fields, and consistency across repeated equivalent inputs.</p>
+          <p>From a product perspective, I would also track how often the model expresses low confidence and whether that uncertainty is useful enough to drive a future “ask for more information” step. These are evaluation criteria for the next iteration, not claimed results from the current prototype.</p>
+          <p><strong>Important:</strong> this prototype is not a medical diagnostic system and should not be treated as one. Its purpose is to evaluate a model architecture and interaction pattern over structured symptom data.</p>
+        </section>
+
+        <section class="case-section reveal" id="shipping">
+          <div class="case-section-num">07 — Shipping & next</div>
+          <h2>Ship the question, then decide what deserves complexity.</h2>
+          <p>I published the prototype so the experiment can be interacted with directly instead of existing only as a code sample or architecture diagram. The next version should be driven by observed failure modes.</p>
+          <ul>
+            <li>If similar profiles are frequently confused, test whether the state representation or candidate definitions need improvement.</li>
+            <li>If confidence is well calibrated, use thresholds to decide when the product should ask for more information.</li>
+            <li>If the model cannot reliably separate profiles, introduce a hybrid layer deliberately rather than pretending the model is sufficient.</li>
+            <li>If the core hypothesis holds, expand the evaluation set before expanding the product scope.</li>
+          </ul>
+          <p>That is the broader lesson I wanted from the project: new AI infrastructure is most useful when you turn its marketing claim into a concrete product hypothesis and design a prototype that can prove you wrong.</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="l">© <span id="yr"></span> Roman Amangeldiyev — İstanbul</div>
+    <div class="r">
+      <a href="projects.html">Projects</a>
+      <a href="https://roman.s.gy/jev-ai" target="_blank" rel="noopener">Live demo</a>
+      <a href="https://x.com/romangeldiyev" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script src="script.js" defer></script>
+</body>
+</html>
