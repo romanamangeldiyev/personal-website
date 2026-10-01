@@ -4,6 +4,20 @@
    both render from this same list. */
 const PROJECTS = [
   {
+    name: "Jev AI Experiment",
+    kind: "Decision-model prototype",
+    status: "Prototype",
+    featured: true,
+    spotlight: true,
+    description: "A 25-profile experiment testing whether Jev can reason over structured symptom data without a local matching engine, local scoring, or a fallback layer.",
+    focus: "Product experiment · AI evaluation · Structured decisions",
+    tags: ["Jev", "Decision Models", "Structured Data", "AI Evaluation"],
+    githubUrl: "",
+    githubDisabled: false,
+    technicalUrl: "project-jev-ai.html",
+    liveUrl: "https://roman.s.gy/jev-ai"
+  },
+  {
     name: "Lexa",
     kind: "Legal AI platform",
     status: "Building",
@@ -68,7 +82,7 @@ const PROJECTS = [
 
   function makeCard(project, index) {
     const card = document.createElement("article");
-    card.className = "project-card reveal";
+    card.className = "project-card reveal" + (project.spotlight ? " project-card-spotlight" : "");
 
     const top = document.createElement("div");
     top.className = "project-card-top";
