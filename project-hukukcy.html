@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>hukukcy.com — Product & Engineering Case Study | Roman Amangeldiyev</title>
+<meta name="description" content="A production legal AI platform for Turkmenistan: public law access, grounded legal research, formal document generation, verification, and role-specific workflows." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="canonical" href="https://romanamangeldiyev.com/project-hukukcy.html" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Roman Amangeldiyev" />
+<meta name="theme-color" content="#100F0C" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://romanamangeldiyev.com/project-hukukcy.html" />
+<meta property="og:site_name" content="Roman Amangeldiyev" />
+<meta property="og:title" content="hukukcy.com — Product & Engineering Case Study" />
+<meta property="og:description" content="A production legal AI platform for Turkmenistan built around grounded legal research, formal document workflows, and verifiable outputs." />
+<meta property="og:image" content="https://romanamangeldiyev.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="project-detail-page">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <nav class="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#stack">Stack</a>
+      <a class="projects-active" href="projects.html">Projects</a>
+      <a href="index.html#writing">Blog</a>
+      <a href="index.html#credentials">Education</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="case-back" href="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All projects
+      </a>
+      <div class="case-eyebrow reveal">Legal AI platform · Production</div>
+      <h1 class="case-title reveal">hukukcy.com</h1>
+      <p class="case-dek reveal">A legal AI platform for Turkmenistan that combines public access to law with grounded research, role-specific workflows, formal document generation, and verifiable outputs.</p>
+      <div class="case-meta reveal"><span>Product Strategy</span><span>FastAPI</span><span>Next.js</span><span>LangGraph</span><span>PostgreSQL</span><span>Qdrant</span><span>AWS</span></div>
+      <div class="case-actions reveal">
+        <a class="btn ghost" href="https://hukukcy.com" target="_blank" rel="noopener"><span>Open hukukcy.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn ghost" href="https://github.com/romanamangeldiyev/Lexa" target="_blank" rel="noopener"><span>View GitHub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-content">
+    <div class="wrap case-layout">
+      <aside class="case-toc reveal" aria-label="Article contents">
+        <div class="label">On this page</div>
+        <a href="#product">01 — Product</a>
+        <a href="#surface">02 — Product surface</a>
+        <a href="#architecture">03 — Architecture</a>
+        <a href="#knowledge">04 — Legal knowledge</a>
+        <a href="#agents">05 — Agentic RAG</a>
+        <a href="#integrity">06 — Output integrity</a>
+        <a href="#production">07 — Production</a>
+        <a href="#pm">08 — Product decisions</a>
+      </aside>
+
+      <article class="case-article">
+        <section class="case-section reveal" id="product">
+          <div class="case-section-num">01 — Product</div>
+          <h2>Not a legal chatbot — a legal workflow product.</h2>
+          <p>hukukcy.com is built around a practical job: help a person move from an ordinary-language legal problem to a structured, grounded and usable next step. The product serves citizens, legal professionals and public-institution workflows rather than treating every user as the same chat session.</p>
+          <div class="case-callout"><p>The core product decision was to make the AI accountable to a workflow: collect facts, research the law, expose the legal basis, generate the document, and preserve a verifiable output.</p></div>
+          <p>The public experience also makes the law itself accessible. Users can browse legal material and verify generated documents without entering the authenticated application.</p>
+        </section>
+
+        <section class="case-section reveal" id="surface">
+          <div class="case-section-num">02 — Product surface</div>
+          <h2>Public legal access and authenticated workspaces are separated.</h2>
+          <p>The production product uses two surfaces with different responsibilities. <strong>hukukcy.com</strong> hosts the public landing experience, law library, help and document verification. <strong>app.hukukcy.com</strong> hosts authenticated workflows such as login, document creation, drafts, profiles, lawyer tools and administration.</p>
+          <ul>
+            <li><strong>Citizens:</strong> describe a legal problem, answer targeted questions and prepare a formal petition or complaint.</li>
+            <li><strong>Lawyers:</strong> work with their own cases, legal research, saved material, reusable text blocks, editing and document versions.</li>
+            <li><strong>Officials:</strong> use institution-specific workflows for formal documents rather than a citizen-style petition flow.</li>
+            <li><strong>Public users:</strong> browse laws and verify a document code without authentication.</li>
+          </ul>
+        </section>
+
+        <section class="case-section reveal" id="architecture">
+          <div class="case-section-num">03 — Architecture</div>
+          <h2>The architecture follows the legal workflow.</h2>
+          <p>The product is a Next.js application backed by a FastAPI service and a stateful data layer. The web, API, retrieval, orchestration and infrastructure responsibilities are kept separate so legal search, document generation and user-facing product flows can evolve independently.</p>
+          <div class="case-stack">
+            <div class="case-stack-item"><div class="k">Frontend</div><div class="v">Next.js · TypeScript · Tailwind</div></div>
+            <div class="case-stack-item"><div class="k">API</div><div class="v">FastAPI · SQLAlchemy · Alembic</div></div>
+            <div class="case-stack-item"><div class="k">Agent orchestration</div><div class="v">LangGraph</div></div>
+            <div class="case-stack-item"><div class="k">Primary data</div><div class="v">PostgreSQL 16</div></div>
+            <div class="case-stack-item"><div class="k">Dense retrieval</div><div class="v">Qdrant · Voyage embeddings</div></div>
+            <div class="case-stack-item"><div class="k">Runtime services</div><div class="v">Redis · Docker · Caddy</div></div>
+          </div>
+          <p>Authentication, document state, legal corpus metadata, citations, research traces and versioned application data live server-side instead of being hidden in browser-local state.</p>
+        </section>
+
+        <section class="case-section reveal" id="knowledge">
+          <div class="case-section-num">04 — Legal knowledge</div>
+          <h2>The legal corpus is deterministic; the model does not write the law.</h2>
+          <p>Legal source material is ingested from law PDFs into structured records. The ingestion path is intentionally deterministic: a hallucination inside the corpus would be more dangerous than a bad generated sentence because it would be mistaken for a source of truth.</p>
+          <p>Search is hybrid. PostgreSQL lexical signals and title-aware ranking are combined with dense retrieval through Qdrant. The retriever nominates candidate articles, but the text returned to the application is read from the canonical PostgreSQL record. Repealed or superseded material can be excluded before it ever becomes a citation candidate.</p>
+          <div class="case-flow"><code>law PDFs
+→ deterministic parsing + validation
+→ structured law / article records
+→ lexical + dense retrieval
+→ ranked candidate articles
+→ canonical article text from PostgreSQL</code></div>
+        </section>
+
+        <section class="case-section reveal" id="agents">
+          <div class="case-section-num">05 — Agentic RAG</div>
+          <h2>Research and drafting are separate steps with explicit gates.</h2>
+          <p>The document pipeline uses LangGraph to make legal research inspectable instead of hiding everything in one prompt. A planner breaks the requested document into legal elements; research branches can run in parallel; retrieval finds candidates; a selector checks whether an article actually applies to the facts; gaps remain explicit when the system cannot ground an element.</p>
+          <div class="case-flow"><code>case facts
+→ research planner
+→ legal elements
+→ parallel hybrid retrieval
+→ applicability selection / reranking
+→ optional query rewrite
+→ explicit gaps
+→ grounded drafter
+→ citation + fact guards
+→ formal document</code></div>
+          <p>The drafter cannot freely invent citations. Its citation keys are constrained to articles found by research, and a second guard checks them again. Dates, amounts, names and other factual details are also checked against the user-provided source data so the generated document cannot silently manufacture case facts.</p>
+        </section>
+
+        <section class="case-section reveal" id="integrity">
+          <div class="case-section-num">06 — Output integrity</div>
+          <h2>A generated document should remain verifiable after it leaves the app.</h2>
+          <p>Formal documents can be exported as real PDF and DOCX files. The platform also implements its own integrity seal — explicitly not a national digital signature — so a document can be checked later without exposing its contents publicly.</p>
+          <ul>
+            <li>The document payload is canonicalized and hashed before signing.</li>
+            <li>An Ed25519 signing key is held in AWS KMS; the private key does not leave KMS.</li>
+            <li>A public verification code and QR route to the <strong>/barla</strong> verification flow.</li>
+            <li>If a signed document is edited later, the previous seal is revoked instead of being silently reused.</li>
+            <li>Public verification returns the seal verdict without exposing the document body or personal data.</li>
+          </ul>
+        </section>
+
+        <section class="case-section reveal" id="production">
+          <div class="case-section-num">07 — Production</div>
+          <h2>The prototype became an actual production system.</h2>
+          <p>The production deployment runs on AWS in Frankfurt on a single EC2 host using Docker Compose. Caddy terminates HTTPS and routes the public and application domains to the same Next.js and FastAPI containers. PostgreSQL, Redis and Qdrant remain private to the host network.</p>
+          <div class="case-stack">
+            <div class="case-stack-item"><div class="k">Compute</div><div class="v">AWS EC2 · Amazon Linux</div></div>
+            <div class="case-stack-item"><div class="k">Edge</div><div class="v">Caddy · Let's Encrypt</div></div>
+            <div class="case-stack-item"><div class="k">Images</div><div class="v">Amazon ECR</div></div>
+            <div class="case-stack-item"><div class="k">Secrets / signing</div><div class="v">Secrets Manager · KMS</div></div>
+            <div class="case-stack-item"><div class="k">Storage / backups</div><div class="v">Amazon S3</div></div>
+            <div class="case-stack-item"><div class="k">Login</div><div class="v">Email code · Resend</div></div>
+          </div>
+          <p>The server exposes only web traffic; operational access is handled through AWS Systems Manager rather than SSH. Production configuration is also fail-closed: unsafe authentication, missing secrets or invalid signing configuration can prevent the API from starting.</p>
+        </section>
+
+        <section class="case-section reveal" id="pm">
+          <div class="case-section-num">08 — Product decisions</div>
+          <h2>The roadmap is defined as much by what I removed as by what I built.</h2>
+          <p>Building hukukcy.com forced product-management decisions around scope, trust and sequencing. I removed features such as fee calculators, deadline calculators and external institution integrations when they distracted from the core workflow. I also separated the public legal-information surface from the authenticated application instead of turning every visitor into an account funnel.</p>
+          <ul>
+            <li><strong>Trust before breadth:</strong> grounding, citations and verification matter more than adding more AI features.</li>
+            <li><strong>Different jobs, different workspaces:</strong> citizens, lawyers and officials should not share one generic UX.</li>
+            <li><strong>Public law is part of the product:</strong> users should be able to inspect the underlying legal source, not only trust an AI answer.</li>
+            <li><strong>Production constraints shape product:</strong> privacy, auditability, deployment and failure modes are product requirements, not backend cleanup.</li>
+          </ul>
+          <p>This project is where my engineering and product-management interests meet most directly: defining the user workflow, choosing what not to build, designing the retrieval and generation system, and carrying the same product into production.</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="l">© <span id="yr"></span> Roman Amangeldiyev — İstanbul</div>
+    <div class="r">
+      <a href="https://hukukcy.com" target="_blank" rel="noopener">hukukcy.com</a>
+      <a href="projects.html">Projects</a>
+      <a href="https://github.com/romanamangeldiyev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/romangeldiyev" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script src="script.js" defer></script>
+</body>
+</html>
