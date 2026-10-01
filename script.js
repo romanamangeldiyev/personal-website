@@ -107,7 +107,9 @@ const CV_URL = "#";
       const links = Array.from(document.querySelectorAll(".navlinks a"));
       const map = {};
       links.forEach((a) => {
-        const id = a.getAttribute("href").slice(1);
+        const href = a.getAttribute("href") || "";
+        if (!href.startsWith("#")) return;
+        const id = href.slice(1);
         const sec = document.getElementById(id);
         if (sec) map[id] = a;
       });
