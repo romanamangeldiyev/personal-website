@@ -1,7 +1,9 @@
 /* Project catalog
    ----------------------------------------------------
-   Add new work here once; the homepage preview and /projects.html
-   both render from this same list. */
+   Keep this list in sync with the pre-rendered cards in /projects.html.
+   JavaScript only populates a project container when that container is empty,
+   so crawlers can read static HTML while the homepage can still render from
+   this shared catalog. */
 const PROJECTS = [
   {
     name: "Jev AI Experiment",
@@ -140,22 +142,23 @@ const PROJECTS = [
     return card;
   }
 
+  function populateIfEmpty(container, projects) {
+    if (!container || container.children.length > 0) return;
+
+    projects.forEach(function (project, index) {
+      container.appendChild(makeCard(project, index));
+    });
+  }
+
   function renderProjects() {
     const featured = document.getElementById("featuredProjects");
-    if (featured) {
-      PROJECTS.filter(function (project) { return project.featured; })
-        .slice(0, 3)
-        .forEach(function (project, index) {
-          featured.appendChild(makeCard(project, index));
-        });
-    }
+    populateIfEmpty(
+      featured,
+      PROJECTS.filter(function (project) { return project.featured; }).slice(0, 3)
+    );
 
     const all = document.getElementById("allProjects");
-    if (all) {
-      PROJECTS.forEach(function (project, index) {
-        all.appendChild(makeCard(project, index));
-      });
-    }
+    populateIfEmpty(all, PROJECTS);
   }
 
   if (document.readyState === "loading") {
