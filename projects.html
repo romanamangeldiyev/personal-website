@@ -26,6 +26,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Projects by Roman Amangeldiyev",
+  "url": "https://romanamangeldiyev.com/projects.html",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Jev AI Experiment",
+        "description": "A 25-profile experiment testing whether Jev can reason over structured symptom data without a local matching engine, local scoring, or a fallback layer.",
+        "url": "https://romanamangeldiyev.com/project-jev-ai.html",
+        "sameAs": "https://roman.s.gy/jev-ai",
+        "applicationCategory": "AI experiment"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "hukukcy.com",
+        "description": "A Turkmenistan-focused legal platform that turns plain-language legal problems into grounded research and formal documents, with public law browsing and document verification.",
+        "url": "https://romanamangeldiyev.com/project-hukukcy.html",
+        "sameAs": "https://hukukcy.com",
+        "applicationCategory": "Legal technology"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "PlatoMind",
+        "description": "A product experiment for structured debate around education, designed to bring students, educators, parents, researchers, and other stakeholders into the same conversation.",
+        "url": "https://romanamangeldiyev.com/project-platomind.html",
+        "applicationCategory": "Education"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="projects-page">
 
@@ -63,7 +108,62 @@
         <div class="sec-num">01 — Archive</div>
         <div class="projects-archive-note">Newest and active work first</div>
       </div>
-      <div class="project-grid" id="allProjects"></div>
+      <div class="project-grid" id="allProjects">
+        <article class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-index">/01</span>
+            <span class="project-status">Prototype</span>
+          </div>
+          <h3>Jev AI Experiment</h3>
+          <div class="project-kind">Decision-model prototype</div>
+          <div class="project-focus">Product experiment · AI evaluation · Structured decisions</div>
+          <p class="project-desc">A 25-profile experiment testing whether Jev can reason over structured symptom data without a local matching engine, local scoring, or a fallback layer.</p>
+          <div class="project-tags">
+            <span>Jev</span><span>Decision Models</span><span>Structured Data</span><span>AI Evaluation</span>
+          </div>
+          <div class="project-links">
+            <a href="project-jev-ai.html">Case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="https://roman.s.gy/jev-ai" target="_blank" rel="noopener">Open app<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-index">/02</span>
+            <span class="project-status">Production</span>
+          </div>
+          <h3>hukukcy.com</h3>
+          <div class="project-kind">Legal AI platform</div>
+          <div class="project-focus">Product strategy · Agentic legal RAG · Production systems</div>
+          <p class="project-desc">A Turkmenistan-focused legal platform that turns plain-language legal problems into grounded research and formal documents, with public law browsing and document verification.</p>
+          <div class="project-tags">
+            <span>FastAPI</span><span>Next.js</span><span>LangGraph</span><span>PostgreSQL</span><span>Qdrant</span><span>AWS</span>
+          </div>
+          <div class="project-links">
+            <a href="project-hukukcy.html">Case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="https://hukukcy.com" target="_blank" rel="noopener">Open app<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://github.com/romanamangeldiyev/Lexa" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-index">/03</span>
+            <span class="project-status">Prototype</span>
+          </div>
+          <h3>PlatoMind</h3>
+          <div class="project-kind">Education platform prototype</div>
+          <div class="project-focus">Product design · Community systems · Education</div>
+          <p class="project-desc">A product experiment for structured debate around education, designed to bring students, educators, parents, researchers, and other stakeholders into the same conversation.</p>
+          <div class="project-tags">
+            <span>React</span><span>JavaScript</span><span>Product Design</span><span>Education</span>
+          </div>
+          <div class="project-links">
+            <a href="project-platomind.html">Case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="project-link-disabled" aria-disabled="true" title="Repository link is currently disabled">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+      </div>
 
       <div class="projects-cta reveal">
         <div>
