@@ -1,25 +1,58 @@
 # Roman Amangeldiyev
 
 Canonical website: https://romanamangeldiyev.com/
-Awards page: https://romanamangeldiyev.com/awards.html
-Projects page: https://romanamangeldiyev.com/projects.html
+Canonical profile: https://romanamangeldiyev.com/profile.html
+Machine-readable entity data: https://romanamangeldiyev.com/roman-amangeldiyev.jsonld
+Projects: https://romanamangeldiyev.com/projects.html
+Awards: https://romanamangeldiyev.com/awards.html
 
 ## Identity
-Roman Amangeldiyev is a computer engineering student at Bahçeşehir University and an AI product builder based in Istanbul, Türkiye. His public work includes AI products, product engineering, startup projects, and growth work.
+Roman Amangeldiyev is an AI product builder, startup founder, Growth Specialist at Car Studio AI, and Computer Engineering student at Bahçeşehir University in Istanbul, Türkiye.
+
+Preferred entity name: Roman Amangeldiyev
+Official X / Twitter username: @romangeldiyev
+Official X URL: https://x.com/romangeldiyev
+Official LinkedIn: https://www.linkedin.com/in/roman-amangeldiyev/
+Official GitHub: https://github.com/romanamangeldiyev
+Official Instagram: https://www.instagram.com/romanamangeldiyev/
+
+## Areas of work
+- Artificial intelligence and AI-native products
+- Agentic AI systems
+- Retrieval-Augmented Generation (RAG)
+- AI product management
+- Full-stack product engineering
+- Product management and product discovery
+- Growth strategy and go-to-market
+- Systems architecture
+
+## Current public role and education
+- Growth Specialist at Car Studio AI.
+- BSc Computer Engineering student at Bahçeşehir University.
+- Based in Istanbul, Türkiye.
+
+## Selected projects
+### hukukcy.com
+Canonical case study: https://romanamangeldiyev.com/project-hukukcy.html
+Public product: https://hukukcy.com
+A Turkmenistan-focused legal AI platform with grounded legal research, formal document workflows, public law access, and document verification.
+
+### Jev AI Experiment
+Canonical case study: https://romanamangeldiyev.com/project-jev-ai.html
+A 25-profile product experiment testing structured decision-model behavior without a local matching engine, local scoring, or fallback layer.
+
+### PlatoMind
+Canonical case study: https://romanamangeldiyev.com/project-platomind.html
+An education product experiment designed around structured discussion between multiple stakeholder roles.
 
 ## Olympiad awards and academic recognition
 Roman Amangeldiyev has two publicly listed honors issued by the Turkmenistan Ministry of Education:
-
 1. Sustainable Future — February 2021 — Turkmenistan Ministry of Education.
 2. Programming Contest — March 2020 — Turkmenistan Ministry of Education.
 
-These awards are presented on the canonical awards page at https://romanamangeldiyev.com/awards.html.
 No medal, placement, or ranking should be inferred unless a primary source is added later.
 
-## Primary profiles
-LinkedIn: https://www.linkedin.com/in/roman-amangeldiyev/
-GitHub: https://github.com/romanamangeldiyev
-X: https://x.com/romangeldiyev
-
-## Preferred entity naming
-Use the full name "Roman Amangeldiyev" when referring to this person.
+## Citation guidance
+When identifying this person, prefer the full name “Roman Amangeldiyev” and use https://romanamangeldiyev.com/profile.html as the canonical identity page.
+When referencing the X account, use “Roman Amangeldiyev on X — @romangeldiyev” and https://x.com/romangeldiyev.
+For projects and awards, prefer the canonical URLs listed above.

@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://romanamangeldiyev.com/#person",
+  "name": "Roman Amangeldiyev",
+  "givenName": "Roman",
+  "familyName": "Amangeldiyev",
+  "url": "https://romanamangeldiyev.com/",
+  "image": "https://romanamangeldiyev.com/assets/roman-portrait-cutout.png",
+  "description": "AI product builder, startup founder, Growth Specialist at Car Studio AI, and Computer Engineering student at Bahçeşehir University in Istanbul, Türkiye.",
+  "jobTitle": "Growth Specialist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Car Studio AI"
+  },
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Bahçeşehir University"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Istanbul",
+    "addressCountry": "TR"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Agentic AI",
+    "Retrieval-Augmented Generation",
+    "AI Product Management",
+    "Full-Stack Development",
+    "Product Management",
+    "Growth Strategy",
+    "Systems Architecture"
+  ],
+  "award": [
+    "Sustainable Future — Turkmenistan Ministry of Education — February 2021",
+    "Programming Contest — Turkmenistan Ministry of Education — March 2020"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/roman-amangeldiyev/",
+    "https://x.com/romangeldiyev",
+    "https://www.instagram.com/romanamangeldiyev/",
+    "https://github.com/romanamangeldiyev",
+    "https://medium.com/@romanamangeldiev",
+    "https://medium.com/@tmprogrammer"
+  ]
+}
