@@ -147,3 +147,78 @@ const CV_URL = "#";
     })();
   }
 })();
+
+/* ---- olympiad awards enhancement ----
+   Keeps the original award text in HTML as a no-JS fallback, then upgrades the
+   section visually and links to a dedicated crawlable awards page. */
+(function () {
+  "use strict";
+
+  function enhanceAwards() {
+    const honors = document.querySelector(".honors");
+    if (!honors) return;
+
+    if (!document.querySelector('link[href="awards.css"]')) {
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "awards.css";
+      document.head.appendChild(stylesheet);
+    }
+
+    const label = honors.querySelector(".honors-head .hk");
+    const heading = honors.querySelector(".honors-head h3");
+    if (label) label.textContent = "Olympiad recognition";
+    if (heading) heading.innerHTML = "Olympiad <em>honors</em>";
+
+    if (!honors.querySelector(".honors-intro")) {
+      const intro = document.createElement("p");
+      intro.className = "honors-intro";
+      intro.textContent = "Two academic recognitions issued by the Turkmenistan Ministry of Education — an early record of competition, problem solving, and building discipline.";
+      const head = honors.querySelector(".honors-head");
+      if (head) head.insertAdjacentElement("afterend", intro);
+    }
+
+    const awards = [
+      {
+        year: "2021",
+        title: "Sustainable Future",
+        issuer: "Turkmenistan Ministry of Education · February 2021",
+        kind: "Olympiad recognition"
+      },
+      {
+        year: "2020",
+        title: "Programming Contest",
+        issuer: "Turkmenistan Ministry of Education · March 2020",
+        kind: "Programming · Olympiad recognition"
+      }
+    ];
+
+    honors.querySelectorAll(".honor-card").forEach((card, index) => {
+      const award = awards[index];
+      if (!award) return;
+      card.innerHTML = `
+        <div class="award-topline">
+          <div>
+            <div class="award-kicker">${award.kind}</div>
+          </div>
+          <div class="hy" aria-hidden="true">${award.year}</div>
+        </div>
+        <div class="star" aria-hidden="true">★</div>
+        <div class="ht">${award.title}</div>
+        <div class="hs">${award.issuer}</div>
+      `;
+    });
+
+    if (!honors.querySelector(".honors-more")) {
+      const more = document.createElement("a");
+      more.className = "honors-more";
+      more.href = "awards.html";
+      more.setAttribute("aria-label", "View Roman Amangeldiyev olympiad awards");
+      more.textContent = "View olympiad awards →";
+      honors.appendChild(more);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", enhanceAwards);
+  if (document.readyState !== "loading") enhanceAwards();
+})();
